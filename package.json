@@ -15,7 +15,13 @@
     "mysql2": "^2.2.5",
     "oracledb": "^5.1.0",
     "pg": "^8.5.1",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "bcrypt": "^5.0.1",
+    "concurrently": "6.0.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.10.0",
+    "jsonwebtoken": "^8.5.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "bcrypt": "^5.0.1",
