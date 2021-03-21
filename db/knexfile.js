@@ -4,7 +4,7 @@
     connection: {
       database: "postgres",
       user: "postgres",
-      password: "",
+      password: process.env.financeAccess,
       timezone: "UTC",
     },
     pool: {
