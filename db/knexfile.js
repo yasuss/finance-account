@@ -2,9 +2,9 @@
   development: {
     client: "postgresql",
     connection: {
-      database: "postgres",
-      user: "postgres",
-      password: process.env.financeAccess,
+      database: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
       timezone: "UTC",
     },
     pool: {
