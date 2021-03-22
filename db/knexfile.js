@@ -1,6 +1,8 @@
 ﻿require("dotenv").config();
 const dbSocketPath = process.env.DB_SOCKET_PATH || "/cloudsql";
-const dbSocketAddr = process.env.DB_HOST ? process.env.DB_HOST.split(":") : null;
+const dbSocketAddr = process.env.DB_HOST
+  ? process.env.DB_HOST.split(":")
+  : null;
 const host = dbSocketAddr && dbSocketAddr[0];
 const port = dbSocketAddr && dbSocketAddr[1];
 const cloudHost = `${dbSocketPath}/${process.env.CLOUD_SQL_CONNECTION_NAME}`;
@@ -19,6 +21,12 @@ module.exports = {
     pool: {
       min: 2,
       max: 2,
+      createTimeoutMillis: 3000,
+      acquireTimeoutMillis: 30000,
+      idleTimeoutMillis: 30000,
+      reapIntervalMillis: 1000,
+      createRetryIntervalMillis: 100,
+      propagateCreateError: false,
     },
     migrations: {
       directory: "./migrations",
@@ -37,6 +45,12 @@ module.exports = {
     pool: {
       min: 2,
       max: 2,
+      createTimeoutMillis: 3000,
+      acquireTimeoutMillis: 30000,
+      idleTimeoutMillis: 30000,
+      reapIntervalMillis: 1000,
+      createRetryIntervalMillis: 100,
+      propagateCreateError: false,
     },
     migrations: {
       directory: "./migrations",
