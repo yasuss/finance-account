@@ -1,7 +1,7 @@
 ﻿const dbSocketPath = process.env.DB_SOCKET_PATH || "/cloudsql";
-const dbSocketAddr = process.env.DB_HOST.split(":");
-const host = dbSocketAddr[0];
-const port = dbSocketAddr[1];
+const dbSocketAddr = process.env.DB_HOST ? process.env.DB_HOST.split(":") : null;
+const host = dbSocketAddr && dbSocketAddr[0];
+const port = dbSocketAddr && dbSocketAddr[1];
 const cloudHost = `${dbSocketPath}/${process.env.CLOUD_SQL_CONNECTION_NAME}`;
 
 module.exports = {
