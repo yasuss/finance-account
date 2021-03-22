@@ -2,9 +2,10 @@
   development: {
     client: "postgresql",
     connection: {
-      database: "finance-data",
-      user: "postgres",
-      password: "financeAccess",
+      host: process.env.DB_HOST || '127.0.0.1',
+      database: process.env.DB_NAME || "finance-data",
+      user: process.env.DB_USER || "postgres",
+      password: process.env.DB_PASSWORD || "financeAccess",
       timezone: "UTC",
     },
     pool: {
@@ -18,9 +19,10 @@
   production: {
     client: "postgresql",
     connection: {
-      database: "finance-data",
-      user: "postgres",
-      password: "financeAccess",
+      host: process.env.DB_HOST || '34.70.116.130',
+      database: process.env.DB_NAME || "finance-data",
+      user: process.env.DB_USER || "postgres",
+      password: process.env.DB_PASSWORD || "financeAccess",
       timezone: "UTC",
     },
     pool: {
