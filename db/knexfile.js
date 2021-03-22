@@ -1,4 +1,5 @@
-﻿const dbSocketPath = process.env.DB_SOCKET_PATH || "/cloudsql";
+﻿require("dotenv").config();
+const dbSocketPath = process.env.DB_SOCKET_PATH || "/cloudsql";
 const dbSocketAddr = process.env.DB_HOST ? process.env.DB_HOST.split(":") : null;
 const host = dbSocketAddr && dbSocketAddr[0];
 const port = dbSocketAddr && dbSocketAddr[1];
