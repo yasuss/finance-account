@@ -7,8 +7,14 @@
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.18.3",
+    "concurrently": "6.0.0",
+    "dotenv": "^8.2.0",
     "express": "4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.10.0",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.19",
     "mssql": "^6.3.1",
     "mysql": "^2.18.1",
@@ -16,11 +22,6 @@
     "oracledb": "^5.1.0",
     "pg": "^8.5.1",
     "sqlite3": "^5.0.2",
-    "bcrypt": "^5.0.1",
-    "concurrently": "6.0.0",
-    "express-session": "^1.17.1",
-    "express-validator": "^6.10.0",
-    "jsonwebtoken": "^8.5.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

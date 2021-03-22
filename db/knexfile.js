@@ -2,9 +2,9 @@
   development: {
     client: "postgresql",
     connection: {
-      database: process.env.DB_NAME,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
+      database: "finance-data",
+      user: "postgres",
+      password: "financeAccess",
       timezone: "UTC",
     },
     pool: {
@@ -12,7 +12,23 @@
       max: 10,
     },
     migrations: {
-      tableName: "knex_migrations",
+      directory: "./migrations",
+    },
+  },
+  production: {
+    client: "postgresql",
+    connection: {
+      database: "finance-data",
+      user: "postgres",
+      password: "financeAccess",
+      timezone: "UTC",
+    },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./migrations",
     },
   },
 };
