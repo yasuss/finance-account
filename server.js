@@ -1,4 +1,4 @@
-﻿require('dotenv').config();
+﻿require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
@@ -85,7 +85,7 @@ app.post("/signin", (req, res) => {
   const { username, password } = req.body;
 
   const user = db("users").where("username", username).select();
-
+  console.log("user", user);
   user
     .then((result) => {
       const findUser = result[0];
@@ -115,6 +115,7 @@ app.post("/signin", (req, res) => {
       return res.json({ token, uuid, selectUsername });
     })
     .catch((error) => {
+      console.log("error", error);
       res.status(401).json({ message: error });
     });
 });
