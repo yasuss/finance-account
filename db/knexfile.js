@@ -20,7 +20,7 @@ module.exports = {
     },
     pool: {
       min: 2,
-      max: 2,
+      max: 5,
       createTimeoutMillis: 3000,
       acquireTimeoutMillis: 30000,
       idleTimeoutMillis: 30000,
@@ -44,7 +44,7 @@ module.exports = {
     },
     pool: {
       min: 2,
-      max: 2,
+      max: 5,
       createTimeoutMillis: 3000,
       acquireTimeoutMillis: 30000,
       idleTimeoutMillis: 30000,
