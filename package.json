@@ -4,8 +4,8 @@
   "scripts": {
     "client": "cd client && npm start",
     "server": "nodemon server.js",
-    "deploy": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "npm install --silent && npm install nodemon --save-dev && npm install -g react-scripts && npm install react-scripts@3.4.1 -g --silent && npm run deploy"
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "deploy": "npm install --silent && npm install nodemon --save-dev && npm install -g react-scripts && npm install react-scripts@3.4.1 -g --silent && npm run start"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
