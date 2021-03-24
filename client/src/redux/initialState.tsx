@@ -1,8 +1,5 @@
-﻿import { State } from "./types";
-import {getUserDataStorage, getCalendarDates} from '../helpers';
-
-// startDate: new Date(new Date().setMonth(new Date().getMonth() - 1)).setDate(1);
-//endDate: new Date(new Date().setMonth(new Date().getMonth() + 1)).setDate(1);
+﻿import { State } from "../types";
+import { getUserDataStorage, getCalendarDates } from "../helpers";
 
 export const initalState: State = {
   userData: getUserDataStorage(),

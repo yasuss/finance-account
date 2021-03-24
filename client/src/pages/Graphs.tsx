@@ -3,7 +3,7 @@ import { RadialChart } from "react-vis";
 import { Flex } from "reflexbox";
 import styled from "styled-components";
 
-import { State } from "../redux/types";
+import { State } from "../types";
 import ColorBlock from "../components/ColorBlock";
 import DateFilters from "../components/DateFilters";
 import { makeSumm } from "../helpers";

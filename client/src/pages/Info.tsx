@@ -6,7 +6,7 @@ import ReactTooltip from "react-tooltip";
 import Heading from "../components/Heading";
 import Paragraph from "../components/Paragraph";
 import ColorBlock from "../components/ColorBlock";
-import { State } from "../redux/types";
+import { State } from "../types";
 
 const LegendItem = styled.div`
   display: flex;

@@ -19,7 +19,7 @@ module.exports = {
       timezone: "UTC",
     },
     pool: {
-      min: 2,
+      min: 0,
       max: 5,
       createTimeoutMillis: 3000,
       acquireTimeoutMillis: 30000,
@@ -43,7 +43,7 @@ module.exports = {
       timezone: "UTC",
     },
     pool: {
-      min: 2,
+      min: 0,
       max: 5,
       createTimeoutMillis: 3000,
       acquireTimeoutMillis: 30000,

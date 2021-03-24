@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { Flex, Box } from "reflexbox";
 
-import { State } from "../redux/types";
+import { State } from "../types";
 import IconButton from "../components/IconButton";
 import SVG from "../components/Icon";
 import Select from "../components/Select";

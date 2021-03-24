@@ -22,7 +22,7 @@ import {
   getDataByCategoryRequest,
   getCategoriesRequest,
 } from "../requests";
-import { State } from "../redux/types";
+import { State } from "../types";
 
 const TABS = [
   {

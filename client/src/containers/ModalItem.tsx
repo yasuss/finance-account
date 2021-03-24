@@ -15,7 +15,7 @@ import { Delete } from "../assets";
 
 import { store } from "../redux/reducers";
 import { addItem, editItem, deleteItem } from "../requests";
-import { State } from "../redux/types";
+import { State } from "../types";
 
 const IconButtonBox = styled.div`
   display: inline-block;

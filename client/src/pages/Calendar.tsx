@@ -5,7 +5,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import ReactTooltip from "react-tooltip";
 
 import { getDataCalendarRequest, editItem } from "../requests";
-import { State } from "../redux/types";
+import { State } from "../types";
 import { setShowModal } from "../containers/ModalItem";
 import { getDataById, makeTitle } from "../helpers";
 

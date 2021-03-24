@@ -83,6 +83,7 @@ app.post(
 
 app.post("/signin", (req, res) => {
   const { username, password } = req.body;
+  console.log("{ username, password }", { username, password });
 
   const user = db("users").where("username", username).select();
 
@@ -115,6 +116,7 @@ app.post("/signin", (req, res) => {
       return res.json({ token, uuid, selectUsername });
     })
     .catch((error) => {
+      console.log('error', error);
       res.status(401).json({ message: error });
     });
 });
@@ -210,3 +212,4 @@ app.post("/deleteItem", (req, res) => {
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
+

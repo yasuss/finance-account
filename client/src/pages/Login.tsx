@@ -9,7 +9,7 @@ import Input from "../components/Input";
 import Heading from "../components/Heading";
 import { store } from "../redux/reducers";
 import { Redirect } from "react-router-dom";
-import { State } from "../redux/types";
+import { State } from "../types";
 
 const PageBox = styled.div`
   display: flex;
