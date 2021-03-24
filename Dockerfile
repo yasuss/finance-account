@@ -1,5 +1,7 @@
 ﻿# pull official base image
-FROM node:13.12.0-alpine
+FROM launcher.gcr.io/google/nodejs
+
+COPY . /app/
 
 # set working directory
 WORKDIR /app
@@ -10,6 +12,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install app dependencies
 COPY package*.json ./
 # COPY package-lock.json /app/package-lock.json
+RUN npm --unsafe-perm install
 RUN npm install --silent
 RUN npm install nodemon --save-dev
 RUN npm install -g react-scripts
