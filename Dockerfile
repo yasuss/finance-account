@@ -14,7 +14,7 @@ COPY package*.json ./
 # COPY package-lock.json /app/package-lock.json
 RUN npm --unsafe-perm install
 RUN npm install --silent
-RUN npm install nodemon --save-dev
+RUN npm install nodemon -g --save
 RUN npm install -g react-scripts
 RUN npm install react-scripts@3.4.1 -g --silent
 
