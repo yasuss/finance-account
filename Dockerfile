@@ -1,5 +1,5 @@
 ﻿# pull official base image
-FROM launcher.gcr.io/google/nodejs
+FROM node:13.12.0-alpine
 
 COPY . /app/
 
