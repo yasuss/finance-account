@@ -1,10 +1,8 @@
 ﻿runtime: custom
 env: flex
 
-services:
-  app:
-    stdin_open: true
-    tty: true
+stdin_open: true
+tty: true
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate
