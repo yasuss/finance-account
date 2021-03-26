@@ -3,11 +3,15 @@ FROM node:13.12.0-alpine
 
 COPY . /app/
 
+WORKDIR /app/client
+ENV PATH /app/client/node_modules/.bin:$PATH
+COPY package*.json ./client/
+RUN npm install
+
 # set working directory
 WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
@@ -22,6 +26,8 @@ RUN npm install react-scripts@2.1.8 -g --silent
 
 # add app
 COPY . .
+
+
 
 # start app
 CMD ["npm", "run", "start"]
