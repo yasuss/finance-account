@@ -12,7 +12,6 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
 COPY package*.json ./
-COPY ./wait-for-it/wait-for-it.sh /app/wait-for-it.sh
 COPY ./db/migrations /app/migrations
 
 RUN npm --unsafe-perm install
