@@ -6,15 +6,15 @@
 
 ### Команда для установки docker:
 
-sudo apt install docker
+npm install docker
 
 ### Команда для установки docker-compose:
 
-sudo apt install docker-compose
+npm install docker-compose
 
 ### Команда для запуска docker:
 
-sudo systemctl start docker
+systemctl start docker
 
 ## Развертывание приложения:
 
