@@ -9,13 +9,12 @@ const cloudHost = `${dbSocketPath}/${process.env.CLOUD_SQL_CONNECTION_NAME}`;
 
 module.exports = {
   development: {
-    client: "postgresql",
+    client: "postgres",
     connection: {
-      host: process.env.DB_HOST ? host : cloudHost,
-      port: process.env.DB_HOST ? port : "",
-      database: process.env.DB_NAME,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
+      host: 'db',
+      database: 'postgres',
+      user: 'postgres',
+      password: 'postgres',
       timezone: "UTC",
     },
     pool: {
@@ -29,7 +28,7 @@ module.exports = {
       propagateCreateError: false,
     },
     migrations: {
-      directory: "./migrations",
+      directory: "../migrations",
     },
   },
   production: {
@@ -53,7 +52,7 @@ module.exports = {
       propagateCreateError: false,
     },
     migrations: {
-      directory: "./migrations",
+      directory: "../migrations",
     },
   },
 };

@@ -164,7 +164,7 @@ const Login = () => {
         </InputBox>
 
         <Button primary onClick={handleOnClick}>
-          {tab === "signIn" ? "Войти" : "Зарегестрироваться"}
+          {tab === "signIn" ? "Войти" : "Зарегистрироваться"}
         </Button>
 
         <ChangeTabs tab={tab} setTab={setTab} setError={setError} />

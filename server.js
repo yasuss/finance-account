@@ -132,7 +132,7 @@ app.post("/data", authMiddleware, (req, res) => {
   const { uuid, startDate, endDate } = req.body;
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const data = db.raw(
-    `SELECT id, summ, comment, category, date AT TIME ZONE '${timeZone}' AS date, (select C.color from categories C where C.category = D.category) as color, (select C.name from categories C where C.category = D.category) as label from data D where user_uuid = '${uuid}' and date between '${startDate}' and '${endDate}' order by date;`
+    `SELECT id, summ, comment, category, date AT TIME ZONE '${timeZone}' AS date, (select C.color from categories C where C.category = D.category) as color, (select C.name from categories C where C.category = D.category) as label from data D where user_uuid = '${uuid}' and date between '${startDate}' and '${endDate}' order by date desc;`
   );
 
   data
