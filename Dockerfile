@@ -28,4 +28,4 @@ RUN npm install react-scripts@2.1.8 -g --silent
 COPY . .
 
 # start app
-CMD ["npm", "run", "build"]
+CMD ["npm", "run", "start"]
