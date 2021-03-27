@@ -6,11 +6,11 @@
 
 ### Команда для установки docker:
 
-npm install docker
+npm install -g docker
 
 ### Команда для установки docker-compose:
 
-npm install docker-compose
+npm install -g docker-compose
 
 ### Команда для запуска docker:
 
