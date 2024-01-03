@@ -1,35 +1,35 @@
-﻿# Деплой приложения
+## Deploy applications
 
-## Предварительная установка
+## Pre-installation
 
-Требуется установить docker и docker-compose
+Requires docker and docker-compose to be installed
 
-### Команда для установки docker:
+### Command to install docker:
 
 npm install -g docker
 
-### Команда для установки docker-compose:
+### Command to install docker-compose:
 
 npm install -g docker-compose
 
-### Команда для запуска docker:
+### Command to start docker:
 
 systemctl start docker
 
-## Развертывание приложения:
+### Deploying the application:
 
-Для создания образа приложения (серверной и клиентской части) выполняем команду в корневой папке проекта
+To build the application image (server and client parts), run the command in the root folder of the project
 
 docker build -t finance-account .
 
-Для поднятия образа приложения и postgres выполняем команду в корневой папке проекта
+To raise the application image and postgres, run the command in the project root folder
 
 docker-compose up -d 
 
-## Остановка контейнеров:
+## Stop containers:
 
 docker-compose down
 
-## Удаление образов:
+## Deleting images:
 
 docker image prune
