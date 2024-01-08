@@ -1,6 +1,4 @@
 ﻿import { useSelector } from "react-redux";
-import { RadialChart } from "react-vis";
-import { Flex } from "reflexbox";
 import styled from "styled-components";
 
 import { State } from "../types";
@@ -14,6 +12,19 @@ const CustomTd = styled.td<{ float?: string }>`
 
   ${({ float }) => (float ? `float: ${float}` : "")}
 `;
+
+const Container = styled.div`
+  padding: 0 30px 30px 30px;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ChartContainer = styled.div`
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  align-items: center;
+`
 
 const Legends = ({ items }: any) => {
   return (
@@ -54,24 +65,24 @@ export const Graphs = () => {
   };
 
   return (
-    <Flex pt={30} pl={20} pr={20} flexDirection="column" alignItems="center">
+    <Container>
       <DateFilters
         startDate={startDate}
         endDate={endDate}
         handleOnSave={handleOnSave}
       />
       <span>Расходы: {makeSumm(totalSumm)}</span>
-      <Flex width={400} flexDirection="column" alignItems="center">
-        <RadialChart
+      <ChartContainer>
+        {/* <RadialChart
           colorType={"literal"}
           colorDomain={[0, 100]}
           colorRange={[0, 10]}
           data={data}
           width={300}
           height={300}
-        />
+        /> */}
         <Legends items={legendsItems} />
-      </Flex>
-    </Flex>
+      </ChartContainer>
+    </Container>
   );
 };

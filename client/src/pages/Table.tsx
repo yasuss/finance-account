@@ -1,7 +1,6 @@
 ﻿import { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { Flex, Box } from "reflexbox";
 
 import { State } from "../types";
 import IconButton from "../components/IconButton";
@@ -41,7 +40,10 @@ const CustomTable = styled.table`
   margin-top: 20px;
 `;
 
-const PaginatorBox = styled(Flex)`
+const PaginatorBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid gray;
   border-top: 0;
 
@@ -51,6 +53,12 @@ const PaginatorBox = styled(Flex)`
 const PaginationIconButton = styled(IconButton)`
   height: 25px;
   width: 25px;
+`;
+
+const FiltersContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
 `;
 
 const getRow = (
@@ -130,11 +138,11 @@ const Paginator = ({
   const onLast = () => setCurrentPage(pages);
 
   return (
-    <PaginatorBox alignItems="center" justifyContent="space-between">
-      <Box>{`Показаны строки ${
+    <PaginatorBox>
+      <div>{`Показаны строки ${
         firstIndex + 1
-      }-${secondIndex} из ${totalRows}`}</Box>
-      <Box>
+      }-${secondIndex} из ${totalRows}`}</div>
+      <div>
         <PaginationIconButton
           fillColorHover="palevioletred"
           onClick={onFisrt}
@@ -163,7 +171,7 @@ const Paginator = ({
         >
           <SVG src={RightDouble} />
         </PaginationIconButton>
-      </Box>
+      </div>
     </PaginatorBox>
   );
 };
@@ -201,14 +209,14 @@ export const Table = () => {
   };
 
   return (
-    <Box>
-      <Flex flexDirection="column" pt={20}>
+    <div>
+      <FiltersContainer>
         <DateFilters
           startDate={startDate}
           endDate={endDate}
           handleOnSave={handleOnSave}
         />
-        <Box>
+        <div>
           <Select
             value={settingRows}
             onChange={(event) => setSettingRows(Number(event.target.value))}
@@ -217,11 +225,12 @@ export const Table = () => {
               <option value={el}>{el}</option>
             ))}
           </Select>
-          <Box display="inline-block" pl={10} pt={20}>
+          <div display="inline-block" pl={10} pt={20}>
             строк на странице
-          </Box>
-        </Box>
-      </Flex>
+          </div>
+        </div>
+      </FiltersContainer>
+
       <CustomTable>
         <HeaderTable>
           <CustomTh>Сумма</CustomTh>
@@ -249,6 +258,6 @@ export const Table = () => {
         secondIndex={secondIndex}
         totalRows={totalRows}
       />
-    </Box>
+    </div>
   );
 };

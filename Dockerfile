@@ -1,12 +1,12 @@
 ﻿# pull official base image
-FROM node:13.12.0-alpine
+FROM node:20.10.0
 
 COPY . /app/
 
 WORKDIR /app/client
 ENV PATH /app/client/node_modules/.bin:$PATH
 COPY package*.json ./client/
-RUN npm install
+RUN npm install --no-package-lock --legacy-peer-deps
 
 # set working directory
 WORKDIR /app

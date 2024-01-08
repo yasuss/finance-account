@@ -1,7 +1,6 @@
 ﻿import React, { useState, useCallback } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { Flex, Box } from "reflexbox";
 
 import ModalWindow from "../components/ModalWindow";
 import Input from "../components/Input";
@@ -16,6 +15,27 @@ import { Delete } from "../assets";
 import { store } from "../redux/reducers";
 import { addItem, editItem, deleteItem } from "../requests";
 import { State } from "../types";
+
+const HeadingContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const DatePickerContainer = styled.div`
+  display: flex;
+  height: 100%;
+  padding: 20px 20px 50px 20px;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+`;
 
 const IconButtonBox = styled.div`
   display: inline-block;
@@ -111,15 +131,11 @@ export const ModalItem = () => {
           <SVG src={Delete} />
         </IconButton>
       </IconButtonBox>
-      <Flex height="100%" justifyContent="space-between" flexDirection="column">
+
+      <HeadingContainer >
         <Heading style={{ paddingTop: "20px" }}>{header}</Heading>
 
-        <Flex
-          height="100%"
-          p="20px 20px 50px 20px"
-          flexDirection="column"
-          justifyContent="space-around"
-        >
+        <DatePickerContainer>
           <Input
             placeholder="Сумма"
             pattern="[0-9]*"
@@ -128,9 +144,9 @@ export const ModalItem = () => {
               event.target.validity.valid ? setSumm(event.target.value) : summ
             }
           />
-          <Box width="100%">
+          <div style={{width: "100%"}}>
             <DatePickerComponent startDate={date} onChange={handleChange} />
-          </Box>
+          </div>
           <Select
             value={category}
             onChange={(event) => setСategory(event.target.value)}
@@ -144,16 +160,17 @@ export const ModalItem = () => {
             value={comment}
             onChange={(event) => setComment(event.target.value)}
           />
-        </Flex>
-        <Flex mb={20} mt={20} justifyContent="center">
+        </DatePickerContainer>
+
+        <ButtonContainer>
           <Button onClick={onSave}>Сохранить</Button>
           {editing && (
             <Button style={{ marginLeft: "15px" }} onClick={onDelete}>
               Удалить
             </Button>
           )}
-        </Flex>
-      </Flex>
+        </ButtonContainer>
+      </HeadingContainer>
     </ModalWindow>
   );
 };

@@ -1,8 +1,6 @@
 ﻿import React, { useCallback } from "react";
 import styled from "styled-components";
-import { Box } from "reflexbox";
 
-import Span from "../components/Span";
 import Paragraph from "../components/Paragraph";
 import { checkIcon } from "../assets";
 

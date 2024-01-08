@@ -1,6 +1,5 @@
 ﻿import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { Flex, Box } from "reflexbox";
 import ReactTooltip from "react-tooltip";
 
 import Heading from "../components/Heading";
@@ -18,44 +17,66 @@ const StyleHeading = styled(Heading)`
   padding: 20px 0;
 `;
 
+const TextPadding = styled.div<{pt: number}>`
+  padding-top: ${({pt}) => `${pt}px`};
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-shrink: 15;
+  padding-top: 20px;
+  padding-right: 30px;
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+`;
+
+const CategoriesContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const DecriptionBox = () => {
   return (
-    <Box pt={20} pr={30} flexShrink={15}>
-      <Box data-tip="Hello">
+    <Container pt={20} pr={30} flexShrink={15}>
+      <div>
         С помощью данного сервиса можно учитывать свои траты.
-      </Box>
-      <Box pt={20}>
+      </div>
+      <TextPadding pt={20}>
         Во вкладке "Учет" можно увидеть свои траты в виде таблицы. Для удобства
         расчета, воспользуйтесь выбором периода. Траты можно редактировать или
         удалить с помощью кнопок в правой части таблицы.
-      </Box>
-      <Box pt={20}>
+      </TextPadding>
+      <TextPadding pt={20}>
         Во вкладке "Календарь" вы увидете свои траты в виде заметок в календаре.
         Их можно редактировать с помощью щелчка по заметке. Если щелкнуть на
         саму дату, можно добавить новую трату. Также заметки можно перетаскивать
         с одной даты на другую.
-      </Box>
-      <Box pt={20}>
+      </TextPadding>
+      <TextPadding pt={20}>
         Во вкладке "Графики" можно построить график за нужный период. Данные
         будут отображаться в виде круговой диаграммы с пометками по каждой
         категории.
-      </Box>
-      <Box pt={20}>
+      </TextPadding>
+      <TextPadding pt={20}>
         В верхней части приложения есть знак "+". При клике на него открывается
         форма создания траты.
-      </Box>
-      <Box pt={20}>
+      </TextPadding>
+      <TextPadding pt={20}>
         Справа выведен список категорий. У каждой категории есть свой цвет. Эти
         цвета используются во всех типах отчетов.
-      </Box>
-      <Box pt={100}>Вперед, считать свои расходы!</Box>
-    </Box>
+      </TextPadding>
+      <TextPadding pt={100}>Вперед, считать свои расходы!</TextPadding>
+    </Container>
   );
 };
 
 const CategoriestList = ({ categories }: any) => {
   return (
-    <Box flexShrink={1}>
+    <div>
       <Paragraph>Список категорий</Paragraph>
       <div style={{ paddingTop: 10 }}>
         {categories.map((el: any) => (
@@ -65,7 +86,7 @@ const CategoriestList = ({ categories }: any) => {
           </LegendItem>
         ))}
       </div>
-    </Box>
+    </div>
   );
 };
 
@@ -75,14 +96,15 @@ export const Info = () => {
   const { username } = userData;
 
   return (
-    <Flex flexDirection="column" pg={30} pl={20}>
+    <InfoContainer>
       <ReactTooltip />
 
       <StyleHeading>Добро пожаловать, {username}</StyleHeading>
-      <Flex justifyContent="space-between">
+
+      <CategoriesContainer>
         <DecriptionBox />
         <CategoriestList categories={categories} />
-      </Flex>
-    </Flex>
+      </CategoriesContainer>
+    </InfoContainer>
   );
 };
