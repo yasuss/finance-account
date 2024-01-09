@@ -2,7 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator");
 const { v4: uuidv4 } = require("uuid");

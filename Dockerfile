@@ -1,5 +1,5 @@
 ﻿# pull official base image
-FROM node:20.10.0
+FROM node:20.10.0-alpine
 
 COPY . /app/
 
