@@ -1,4 +1,5 @@
-﻿import styled from "styled-components";
+﻿import React from 'react';
+import styled from "styled-components";
 
 const ModalBack = styled.div`
   width: 100vw;

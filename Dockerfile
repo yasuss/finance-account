@@ -1,5 +1,5 @@
 ﻿# pull official base image
-FROM node:20.10.0-alpine
+FROM node:20.10
 
 COPY . /app/
 
@@ -26,6 +26,8 @@ RUN npm install react-scripts@2.1.8 -g --silent
 
 # add app
 COPY . .
+
+EXPOSE 8080
 
 # start app
 CMD ["npm", "run", "start"]

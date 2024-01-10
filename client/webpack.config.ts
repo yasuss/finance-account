@@ -49,17 +49,15 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css",
         }),
-        new Dotenv(),
+        new Dotenv()
     ],
     devServer: {
-        client: {
-            overlay: false,
-        },
-        host: "0.0.0.0",
-        port: "8080",
-        historyApiFallback: true,
         hot: true,
-        open: false,
-        static: path.resolve(__dirname, "build")
-    },
+        proxy: {
+            ['/api']: {
+                target: 'http://localhost:5000',
+                pathRewrite: { '^/api': '' },
+            },
+        },
+    }
 };

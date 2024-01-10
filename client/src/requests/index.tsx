@@ -3,9 +3,11 @@
 import { store } from "../redux/reducers";
 import { UserData } from "../types";
 
+const API_HOST = '/api';
+
 export const signIn = async ({ username, password }: UserData) => {
   return await axios
-    .post("/signin", { username, password })
+    .post(`${API_HOST}/signin`, { username, password })
     .then((resp) => resp)
     .catch((err) => err.response);
 };
@@ -17,7 +19,7 @@ export const signUp = async ({
 }: UserData) => {
   if (password === passwordConfirm) {
     return await axios
-      .post("/signup", { username, password })
+      .post(`${API_HOST}/signup`, { username, password })
       .then((resp) => resp)
       .catch((err) => err.response);
   } else {
@@ -27,7 +29,7 @@ export const signUp = async ({
 
 export const getUsersRequest = async () => {
   const { data } = await axios
-    .get("/users")
+    .get(`${API_HOST}/users`)
     .then((resp) => resp)
     .catch((err) => err);
 };
@@ -42,7 +44,7 @@ export const getDataTableRequest = async (userData: any, dates?: any) => {
   const convertEndDate = new Date(endDate.setHours(23, 59, 59)).toISOString();
 
   const { data } = await axios
-    .post("/data", {
+    .post(`${API_HOST}/data`, {
       uuid,
       startDate: convertStartDate,
       endDate: convertEndDate,
@@ -76,7 +78,7 @@ export const getDataCalendarRequest = async (userData: any, dates?: any) => {
   const convertEndDate = endDate.toISOString();
 
   const { data } = await axios
-    .post("/data", {
+    .post(`${API_HOST}/data`, {
       uuid,
       startDate: convertStartDate,
       endDate: convertEndDate,
@@ -108,7 +110,7 @@ export const getDataByCategoryRequest = async (userData: any, dates?: any) => {
   const convertEndDate = new Date(endDate.setHours(23, 59, 59)).toISOString();
 
   const { data } = await axios
-    .post("/dataByCategory", {
+    .post(`${API_HOST}/dataByCategory`, {
       uuid,
       startDate: convertStartDate,
       endDate: convertEndDate,
@@ -134,7 +136,7 @@ export const getDataByCategoryRequest = async (userData: any, dates?: any) => {
 
 export const getCategoriesRequest = async () => {
   const { data } = await axios
-    .get("/categories")
+    .get(`${API_HOST}/categories`)
     .then((resp) => resp)
     .catch((err) => {
       if (err.response.status === 403) {
@@ -163,7 +165,7 @@ export const addItem = async ({
   const convertDate = date.toISOString();
 
   return await axios
-    .post("/additem", {
+    .post(`${API_HOST}/additem`, {
       summ,
       date: convertDate,
       category,
@@ -200,7 +202,7 @@ export const editItem = async ({
   const convertDate = date.toISOString();
 
   return await axios
-    .post("/editItem", {
+    .post(`${API_HOST}/editItem`, {
       summ,
       date: convertDate,
       category,
@@ -234,7 +236,7 @@ export const deleteItem = async ({
   graphsDates,
 }: any) => {
   return await axios
-    .post("/deleteItem", { id })
+    .post(`${API_HOST}/deleteItem`, { id })
     .then((resp) => {
       Promise.all([
         getDataByCategoryRequest(userData, graphsDates),

@@ -2,11 +2,10 @@
   "name": "university",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000/",
   "scripts": {
     "start": "npm run webpack:dev",
     "webpack:build": "NODE_ENV=development webpack --mode=development --config webpack.config.ts --progress",
-    "webpack:dev": "NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.ts --progress --host localhost",
+    "webpack:dev": "NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.ts --progress",
     "build": "rimraf ./build && npm run webpack:build",
     "format": "prettier --write \"./**/*.{ts,tsx,json}\""
   },
