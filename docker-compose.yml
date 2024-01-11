@@ -21,6 +21,9 @@ services:
       - "8080:8080"
       - "5000:5000"
     build: .
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
 
   migration:
     image: finance-account:latest

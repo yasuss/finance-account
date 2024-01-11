@@ -42,7 +42,7 @@ const CategoriesContainer = styled.div`
 
 const DecriptionBox = () => {
   return (
-    <Container pt={20} pr={30} flexShrink={15}>
+    <Container>
       <div>
         С помощью данного сервиса можно учитывать свои траты.
       </div>
