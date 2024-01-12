@@ -1,7 +1,13 @@
 ﻿import React, { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Redirect, useLocation } from "react-router-dom";
-import { Link, Route, Switch } from "react-router-dom";
+import {
+    BrowserRouter,
+    Link,
+    Redirect,
+    Route,
+    Switch,
+    useLocation,
+} from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -107,7 +113,7 @@ const HeaderMenu = ({ currentTab, setCurrentTab }: any) => {
                     </IconButton>
                 </div>
                 <LogoutButton primary onClick={onLogout}>
-                    Выйти
+                    Logout
                 </LogoutButton>
             </div>
         </Header>
@@ -127,7 +133,6 @@ const Main = () => {
     );
 
     const userData = useSelector((state: State) => state?.userData);
-    console.log("userData", userData);
     const showModal = useSelector((state: State) => state?.showModal);
     const { startDate: startDateTable, endDate: endDateTable } = useSelector(
         (state: State) => state?.tableData,
@@ -164,31 +169,36 @@ const Main = () => {
         return <Redirect to='/login' />;
     }
 
-    if (pathname === "/") {
-        return <Redirect to='/info' />;
-    }
-
     return (
-        <div className='Main' style={{ height: "100vh" }}>
-            <HeaderMenu currentTab={currentTab} setCurrentTab={setCurrentTab} />
-            <ContentContainer>
-                <Switch>
-                    <Route path='/info'>
-                        <Info />
-                    </Route>
-                    <Route path='/account'>
-                        <Table />
-                    </Route>
-                    <Route path='/calendar'>
-                        <Calendar />
-                    </Route>
-                    <Route path='/graphs'>
-                        <Graphs />
-                    </Route>
-                </Switch>
-            </ContentContainer>
-            {showModal && <ModalItem />}
-        </div>
+        <BrowserRouter>
+            <div className='Main' style={{ height: "100vh" }}>
+                <HeaderMenu
+                    currentTab={currentTab}
+                    setCurrentTab={setCurrentTab}
+                />
+                <ContentContainer>
+                    <Switch>
+                        <Route path='/info'>
+                            <Info />
+                        </Route>
+                        <Route path='/account'>
+                            <Table />
+                        </Route>
+                        <Route path='/calendar'>
+                            <Calendar />
+                        </Route>
+                        <Route path='/graphs'>
+                            <Graphs />
+                        </Route>
+
+                        <Route exact path='/'>
+                            <Redirect to='/info' />
+                        </Route>
+                    </Switch>
+                </ContentContainer>
+                {showModal && <ModalItem />}
+            </div>
+        </BrowserRouter>
     );
 };
 
