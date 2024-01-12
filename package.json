@@ -7,7 +7,8 @@
     "preinstall": "npm install nodemon -g --save",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "migrate": "knex --knexfile db/knexfile.js migrate:latest",
-    "container": "docker-compose up && migrate"
+    "container": "docker-compose up && migrate",
+    "format": "prettier --write \"./**/*.{ts,tsx,json}\""
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -32,6 +33,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.10.0",
     "jsonwebtoken": "^8.5.1",
+    "prettier": "3.1.1",
     "uuid": "^8.3.2"
   }
 }

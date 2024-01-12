@@ -1,5 +1,5 @@
-import { default as InlineSvg } from "react-inlinesvg";
 import React from "react";
+import { default as InlineSvg } from "react-inlinesvg";
 
 // полифил для работы ie 11
 import "./nodeChildrenPolyfill";

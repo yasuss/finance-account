@@ -9,7 +9,7 @@ module.exports = {
     plugins: [require.resolve("@trivago/prettier-plugin-sort-imports")],
     importOrder: [
         "^react",
-        "@indriver/*",
+        "@fullcalendar/react",
         "@^",
         "<THIRD_PARTY_MODULES>",
         "public/*",
