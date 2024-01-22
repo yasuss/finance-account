@@ -38,7 +38,7 @@ export const rootReducer = (state = initalState, action: any) => {
                 endDate: endDateGraphs,
             };
             dataGraphs.data = dataGraphsRaw.map((element: any) => {
-                const summ = Number(element.summ);
+                const summ = Number(element.value);
                 dataGraphs.totalSumm += summ;
                 return { ...element, color: element.color };
             });

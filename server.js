@@ -151,7 +151,7 @@ app.post("/dataByCategory", authMiddleware, (req, res) => {
   const { uuid, startDate, endDate } = req.body;
 
   const data = db.raw(
-    `select category, sum(summ) as summ, (select C.name from categories C where C.category = D.category) as label, (select C.color from categories C where C.category = D.category) as color from data D where user_uuid = '${uuid}' and date between '${startDate}' and '${endDate}' group by category`
+    `select category, sum(summ) as value, (select C.name from categories C where C.category = D.category) as label, (select C.color from categories C where C.category = D.category) as color from data D where user_uuid = '${uuid}' and date between '${startDate}' and '${endDate}' group by category`
   );
 
   data

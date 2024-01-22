@@ -37,8 +37,6 @@ const CustomTr = styled.tr`
 const CustomTable = styled.table`
     width: 100%;
     border: 1px solid gray;
-
-    margin-top: 20px;
 `;
 
 const PaginatorBox = styled.div`
@@ -59,7 +57,14 @@ const PaginationIconButton = styled(IconButton)`
 const FiltersContainer = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 20px;
     padding-top: 20px;
+`;
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 `;
 
 const getRow = (
@@ -202,7 +207,7 @@ export const Table = () => {
     };
 
     return (
-        <div>
+        <Container>
             <FiltersContainer>
                 <DateFilters
                     startDate={startDate}
@@ -225,36 +230,41 @@ export const Table = () => {
                 </div>
             </FiltersContainer>
 
-            <CustomTable>
-                <HeaderTable>
-                    <CustomTh>Сумма</CustomTh>
-                    <CustomTh>Дата</CustomTh>
-                    <CustomTh>Категория</CustomTh>
-                    <CustomTh>Комментарий</CustomTh>
-                </HeaderTable>
-                {dataByPage.map((el: any) =>
-                    getRow(
-                        el,
-                        categories,
-                        userData,
-                        data,
-                        { startDate, endDate },
-                        {
-                            startDate: startDateCalendar,
-                            endDate: endDateCalendar,
-                        },
-                        { startDate: startDateGraphs, endDate: endDateGraphs },
-                    ),
-                )}
-            </CustomTable>
-            <Paginator
-                pages={pages}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                firstIndex={firstIndex}
-                secondIndex={secondIndex}
-                totalRows={totalRows}
-            />
-        </div>
+            <div>
+                <CustomTable>
+                    <HeaderTable>
+                        <CustomTh>Сумма</CustomTh>
+                        <CustomTh>Дата</CustomTh>
+                        <CustomTh>Категория</CustomTh>
+                        <CustomTh>Комментарий</CustomTh>
+                    </HeaderTable>
+                    {dataByPage.map((el: any) =>
+                        getRow(
+                            el,
+                            categories,
+                            userData,
+                            data,
+                            { startDate, endDate },
+                            {
+                                startDate: startDateCalendar,
+                                endDate: endDateCalendar,
+                            },
+                            {
+                                startDate: startDateGraphs,
+                                endDate: endDateGraphs,
+                            },
+                        ),
+                    )}
+                </CustomTable>
+                <Paginator
+                    pages={pages}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                    firstIndex={firstIndex}
+                    secondIndex={secondIndex}
+                    totalRows={totalRows}
+                />
+            </div>
+        </Container>
     );
 };

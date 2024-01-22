@@ -25,6 +25,7 @@ const TextPadding = styled.div<{ pt: number }>`
 
 const Container = styled.div`
     display: flex;
+    flex-direction: column;
     flex-shrink: 15;
     padding-top: 20px;
     padding-right: 30px;

@@ -1,6 +1,7 @@
 ﻿import React from "react";
 import { useSelector } from "react-redux";
 
+import { PieChart } from "@mui/x-charts/PieChart";
 import styled from "styled-components";
 
 import ColorBlock from "../components/ColorBlock";
@@ -65,7 +66,7 @@ export const Graphs = () => {
             endDate,
         });
     };
-
+    console.log("data", data);
     return (
         <Container>
             <DateFilters
@@ -75,6 +76,9 @@ export const Graphs = () => {
             />
             <span>Расходы: {makeSumm(totalSumm)}</span>
             <ChartContainer>
+                {data?.length != 0 ? (
+                    <PieChart width={300} height={300} series={data} />
+                ) : null}
                 {/* <RadialChart
           colorType={"literal"}
           colorDomain={[0, 100]}

@@ -8,6 +8,9 @@ import Paragraph from "../components/Paragraph";
 import DatePickerComponent from "../components/datepicker/DatePicker";
 
 const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 600px;
     padding: 0 20px;
 `;
@@ -15,6 +18,7 @@ const Container = styled.div`
 const FlexContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 `;
 
 const DateFilters = ({ startDate, endDate, handleOnSave }: any) => {
@@ -23,9 +27,7 @@ const DateFilters = ({ startDate, endDate, handleOnSave }: any) => {
 
     return (
         <Container>
-            <div>
-                <Paragraph>Расход за период</Paragraph>
-            </div>
+            <Paragraph>Расход за период</Paragraph>
             <FlexContainer>
                 <div>
                     <span>С:</span>
