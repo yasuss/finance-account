@@ -76,7 +76,7 @@ app.post(
         res.json({ uuid, message: "Пользователь успешно зарегестрирован" });
       })
       .catch((error) => {
-        res.status(500).json({ message: error.response });
+        res.status(500);
       });
   }
 );
