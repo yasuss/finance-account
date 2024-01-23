@@ -27,7 +27,7 @@ const DateFilters = ({ startDate, endDate, handleOnSave }: any) => {
 
     return (
         <Container>
-            <Paragraph>Расход за период</Paragraph>
+            <Paragraph>Expenditure for the period</Paragraph>
             <FlexContainer>
                 <div>
                     <span>С:</span>
@@ -50,7 +50,7 @@ const DateFilters = ({ startDate, endDate, handleOnSave }: any) => {
                             endDate: endDateLocal,
                         })
                     }>
-                    Показать
+                    Show
                 </Button>
             </FlexContainer>
         </Container>

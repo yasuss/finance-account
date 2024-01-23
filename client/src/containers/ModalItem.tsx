@@ -83,7 +83,7 @@ export const ModalItem = () => {
         id,
         editing,
     } = preDataModal;
-    const header = editing ? "Редактирование траты" : "Создание траты";
+    const header = editing ? "Editing a spend" : "Creation of a spend";
 
     const [summ, setSumm] = useState(preSumm);
     const [date, setDate] = useState(preDate);
@@ -140,7 +140,7 @@ export const ModalItem = () => {
 
                 <DatePickerContainer>
                     <Input
-                        placeholder='Сумма'
+                        placeholder='Amount'
                         pattern='[0-9]*'
                         value={summ}
                         onChange={(event) =>
@@ -163,19 +163,19 @@ export const ModalItem = () => {
                         ))}
                     </Select>
                     <Input
-                        placeholder='Комментарий'
+                        placeholder='Comment'
                         value={comment}
                         onChange={(event) => setComment(event.target.value)}
                     />
                 </DatePickerContainer>
 
                 <ButtonContainer>
-                    <Button onClick={onSave}>Сохранить</Button>
+                    <Button onClick={onSave}>Save</Button>
                     {editing && (
                         <Button
                             style={{ marginLeft: "15px" }}
                             onClick={onDelete}>
-                            Удалить
+                            Delete
                         </Button>
                     )}
                 </ButtonContainer>
