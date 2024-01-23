@@ -55,8 +55,8 @@ const ChangeTabs = ({ tab, setTab, setError }: any) => {
         <div>
             <TextButton onClick={handleOnClick}>
                 {tab === "signIn"
-                    ? "Ещё не являетесь пользователем?"
-                    : "Уже есть аккаунт?"}
+                    ? "Not a user yet?"
+                    : "Already have an account?"}
             </TextButton>
         </div>
     );
@@ -102,8 +102,6 @@ const Login = () => {
         } else {
             signUp({ username, password, passwordConfirm }).then((res) => {
                 const { status, data } = res;
-                console.log("status", status);
-                console.log("data", data);
                 if (status === 200) {
                     const { uuid } = data;
 
@@ -134,11 +132,11 @@ const Login = () => {
     return (
         <PageBox>
             <Modal>
-                <Heading>{tab === "signIn" ? "Вход" : "Регистрация"}</Heading>
+                <Heading>{tab === "signIn" ? "SignIn" : "SignUp"}</Heading>
                 <ErrorMessage>{error}</ErrorMessage>
                 <InputBox height={tab === "signIn" ? "80px" : "110px"}>
                     <Input
-                        placeholder='Имя пользователя'
+                        placeholder='Username'
                         value={username}
                         onChange={(event) => {
                             setError(null);
@@ -146,7 +144,7 @@ const Login = () => {
                         }}
                     />
                     <Input
-                        placeholder='Пароль'
+                        placeholder='Password'
                         type='password'
                         value={password}
                         onChange={(event) => {
@@ -156,7 +154,7 @@ const Login = () => {
                     />
                     {tab === "signUp" && (
                         <Input
-                            placeholder='Подтвердить пароль'
+                            placeholder='Confirm password'
                             type='password'
                             value={passwordConfirm}
                             onChange={(event) =>
@@ -167,7 +165,7 @@ const Login = () => {
                 </InputBox>
 
                 <Button primary onClick={handleOnClick}>
-                    {tab === "signIn" ? "Войти" : "Зарегистрироваться"}
+                    {tab === "signIn" ? "SignIn" : "SignUp"}
                 </Button>
 
                 <ChangeTabs tab={tab} setTab={setTab} setError={setError} />

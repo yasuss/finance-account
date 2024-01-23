@@ -66,7 +66,6 @@ export const Graphs = () => {
             endDate,
         });
     };
-    console.log("data", data);
     return (
         <Container>
             <DateFilters
@@ -74,7 +73,7 @@ export const Graphs = () => {
                 endDate={endDate}
                 handleOnSave={handleOnSave}
             />
-            <span>Расходы: {makeSumm(totalSumm)}</span>
+            <span>Expenses: {makeSumm(totalSumm)}</span>
             <ChartContainer>
                 {data?.length != 0 ? (
                     <PieChart width={300} height={300} series={data} />

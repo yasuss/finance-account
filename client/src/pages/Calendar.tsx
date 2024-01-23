@@ -92,10 +92,10 @@ export const Calendar = () => {
             />
             {
                 <FullCalendar
-                    locale='ru'
+                    locale='en'
                     firstDay={1}
                     buttonText={{
-                        today: "сегодня",
+                        today: "today",
                     }}
                     plugins={[dayGridPlugin, interactionPlugin]}
                     selectable

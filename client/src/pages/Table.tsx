@@ -225,7 +225,7 @@ export const Table = () => {
                         ))}
                     </Select>
                     <div display='inline-block' pl={10} pt={20}>
-                        строк на странице
+                        lines per page
                     </div>
                 </div>
             </FiltersContainer>
@@ -233,10 +233,10 @@ export const Table = () => {
             <div>
                 <CustomTable>
                     <HeaderTable>
-                        <CustomTh>Сумма</CustomTh>
-                        <CustomTh>Дата</CustomTh>
-                        <CustomTh>Категория</CustomTh>
-                        <CustomTh>Комментарий</CustomTh>
+                        <CustomTh>Amount</CustomTh>
+                        <CustomTh>Date</CustomTh>
+                        <CustomTh>Category</CustomTh>
+                        <CustomTh>Commentary</CustomTh>
                     </HeaderTable>
                     {dataByPage.map((el: any) =>
                         getRow(

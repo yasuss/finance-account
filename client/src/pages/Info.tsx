@@ -45,33 +45,39 @@ const CategoriesContainer = styled.div`
 const DecriptionBox = () => {
     return (
         <Container>
-            <div>С помощью данного сервиса можно учитывать свои траты.</div>
+            <div>
+                With the help of this service, you can account for your
+                spending.
+            </div>
             <TextPadding pt={20}>
-                Во вкладке "Учет" можно увидеть свои траты в виде таблицы. Для
-                удобства расчета, воспользуйтесь выбором периода. Траты можно
-                редактировать или удалить с помощью кнопок в правой части
-                таблицы.
+                In the Accounting tab, you can see your spending in a table
+                view. For for convenient calculation, use the period selection.
+                You can edit or delete them using the buttons in the right part
+                of the table. of the table.
             </TextPadding>
             <TextPadding pt={20}>
-                Во вкладке "Календарь" вы увидете свои траты в виде заметок в
-                календаре. Их можно редактировать с помощью щелчка по заметке.
-                Если щелкнуть на саму дату, можно добавить новую трату. Также
-                заметки можно перетаскивать с одной даты на другую.
+                In the Calendar tab, you'll see your spending as notes on a on
+                the calendar. You can edit them by clicking on the note. If you
+                click on the date itself, you can add a new expense. Also you
+                can drag and drop notes from one date to another.
             </TextPadding>
             <TextPadding pt={20}>
-                Во вкладке "Графики" можно построить график за нужный период.
-                Данные будут отображаться в виде круговой диаграммы с пометками
-                по каждой категории.
+                In the "Graphs" tab you can plot a graph for the required
+                period. The data will be displayed in the form of a pie chart
+                with labels for each category.
             </TextPadding>
             <TextPadding pt={20}>
-                В верхней части приложения есть знак "+". При клике на него
-                открывается форма создания траты.
+                There is a "+" sign at the top of the app. When you click on it
+                opens the form for creating a spend.
             </TextPadding>
             <TextPadding pt={20}>
-                Справа выведен список категорий. У каждой категории есть свой
-                цвет. Эти цвета используются во всех типах отчетов.
+                A list of categories is displayed on the right. Each category
+                has a different color. These colors are used in all types of
+                reports.
             </TextPadding>
-            <TextPadding pt={100}>Вперед, считать свои расходы!</TextPadding>
+            <TextPadding pt={100}>
+                Go ahead and count your expenses!
+            </TextPadding>
         </Container>
     );
 };
@@ -101,7 +107,7 @@ export const Info = () => {
         <InfoContainer>
             <ReactTooltip />
 
-            <StyleHeading>Добро пожаловать, {username}</StyleHeading>
+            <StyleHeading>Welcome, {username}</StyleHeading>
 
             <CategoriesContainer>
                 <DecriptionBox />
