@@ -85,7 +85,7 @@ const DecriptionBox = () => {
 const CategoriestList = ({ categories }: any) => {
     return (
         <div>
-            <Paragraph>Список категорий</Paragraph>
+            <Paragraph>Сategories</Paragraph>
             <div style={{ paddingTop: 10 }}>
                 {categories.map((el: any) => (
                     <LegendItem>

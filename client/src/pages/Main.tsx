@@ -32,20 +32,20 @@ import { Table } from "./Table";
 
 const TABS = [
     {
-        text: "Инфо",
-        key: "Info",
+        text: "Info",
+        key: "info",
     },
     {
-        text: "Учет",
-        key: "Account",
+        text: "Account",
+        key: "account",
     },
     {
-        text: "Календарь",
-        key: "Calendar",
+        text: "Calendar",
+        key: "calendar",
     },
     {
-        text: "Графики",
-        key: "Graphs",
+        text: "Graphs",
+        key: "graphs",
     },
 ];
 
@@ -129,6 +129,7 @@ const ContentContainer = styled.div`
 
 const Main = () => {
     const { pathname } = useLocation();
+    console.log("pathname", pathname);
     const [currentTab, setCurrentTab] = useState(
         pathname.slice(1) || TABS[0].key,
     );
@@ -197,6 +198,7 @@ const Main = () => {
                         </Route>
                     </Switch>
                 </ContentContainer>
+
                 {showModal && <ModalItem />}
             </div>
         </BrowserRouter>

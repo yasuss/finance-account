@@ -143,9 +143,9 @@ const Paginator = ({
 
     return (
         <PaginatorBox>
-            <div>{`Показаны строки ${
+            <div>{`Shown are rows ${
                 firstIndex + 1
-            }-${secondIndex} из ${totalRows}`}</div>
+            }-${secondIndex} of ${totalRows}`}</div>
             <div>
                 <PaginationIconButton
                     fillColorHover='palevioletred'

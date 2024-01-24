@@ -1,6 +1,6 @@
 ﻿import { createStore } from "redux";
 
-import { getCategoryName, makeTitle } from "../helpers";
+import { makeTitle } from "../helpers";
 import { initalState } from "./initialState";
 
 export const rootReducer = (state = initalState, action: any) => {

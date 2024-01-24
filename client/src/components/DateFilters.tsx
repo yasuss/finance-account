@@ -30,14 +30,14 @@ const DateFilters = ({ startDate, endDate, handleOnSave }: any) => {
             <Paragraph>Expenditure for the period</Paragraph>
             <FlexContainer>
                 <div>
-                    <span>С:</span>
+                    <span>From:</span>
                     <DatePickerComponent
                         startDate={startDateLocal}
                         onChange={setStartDateLocal}
                     />
                 </div>
                 <div>
-                    <span>По:</span>
+                    <span>To:</span>
                     <DatePickerComponent
                         startDate={endDateLocal}
                         onChange={setEndDateLocal}
