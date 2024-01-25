@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Provider } from "react-redux";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import Login from "./pages/Login";
-import Main from "./pages/Main";
+import { store } from "shared/redux/reducers";
+
+import { Login } from "pages/login";
+import { Main } from "pages/main";
 
 import "./App.css";
-import { store } from "./redux/reducers";
 
 const App = () => {
     return (

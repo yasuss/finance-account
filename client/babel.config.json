@@ -13,7 +13,17 @@
           "module-resolver",
           {
             "root": ["./src"],
-            "alias": {}
+            "alias": {
+                "app": "app",
+                "assets": "./src/assets",
+                "entities": "./src/entities/",
+                "features": "./src/features/",
+                "widgets": "./src/widgets/",
+                "pages": "./src/pages/",
+                "types": "./src/types/",
+                "public": "./public/",
+                "shared": "./src/shared/"
+            }
           }
         ]
       ]

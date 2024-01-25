@@ -32,7 +32,19 @@
     "baseUrl": "./src",
     "outDir": "build",
     "typeRoots": ["./node_modules/@types"],
-    "importHelpers": true
+    "importHelpers": true,
+    "paths": {
+      "app": ["app"],
+      "assets/*": ["assets/*"],
+      "entities/*": ["entities/*"],
+      "features/*": ["features/*"],
+      "pages/*": ["pages/*"],
+      "widgets/*": ["widgets/*"],
+      "types/*": ["types/*"],
+      "public/*": ["../public/*"],
+      "shared/*": ["shared/*"],
+      "ui/*": ["ui/*"]
+    },
   },
   "exclude": ["node_modules"]
 }
