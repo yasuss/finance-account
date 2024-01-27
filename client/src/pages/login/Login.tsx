@@ -2,32 +2,14 @@
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 
+import { Button, TextField } from "@mui/material";
+
 import { signIn, signUp } from "shared/api";
 import { store } from "shared/redux/reducers";
 import { State } from "shared/types";
-import Button from "shared/ui/Button";
 import Heading from "shared/ui/Heading";
-import Input from "shared/ui/Input";
-import TextButton from "shared/ui/TextButton";
 
 import * as Styled from "./styles";
-
-const ChangeTabs = ({ tab, setTab, setError }: any) => {
-    const handleOnClick = () => {
-        setTab(tab === "signIn" ? "signUp" : "signIn");
-        setError(null);
-    };
-
-    return (
-        <div>
-            <TextButton onClick={handleOnClick}>
-                {tab === "signIn"
-                    ? "Not a user yet?"
-                    : "Already have an account?"}
-            </TextButton>
-        </div>
-    );
-};
 
 export const Login = () => {
     const [username, setUsername] = useState("");
@@ -100,9 +82,13 @@ export const Login = () => {
         <Styled.PageBox>
             <Styled.Modal>
                 <Heading>{tab === "signIn" ? "SignIn" : "SignUp"}</Heading>
-                <Styled.ErrorMessage>{error}</Styled.ErrorMessage>
-                <Styled.InputBox height={tab === "signIn" ? "80px" : "110px"}>
-                    <Input
+                {error ? (
+                    <Styled.ErrorMessage>{error}</Styled.ErrorMessage>
+                ) : null}
+                <Styled.InputBox>
+                    <TextField
+                        size='small'
+                        variant='outlined'
                         placeholder='Username'
                         value={username}
                         onChange={(event) => {
@@ -110,7 +96,9 @@ export const Login = () => {
                             setUsername(event.target.value);
                         }}
                     />
-                    <Input
+                    <TextField
+                        size='small'
+                        variant='outlined'
                         placeholder='Password'
                         type='password'
                         value={password}
@@ -120,7 +108,8 @@ export const Login = () => {
                         }}
                     />
                     {tab === "signUp" && (
-                        <Input
+                        <TextField
+                            size='small'
                             placeholder='Confirm password'
                             type='password'
                             value={passwordConfirm}
@@ -130,12 +119,18 @@ export const Login = () => {
                         />
                     )}
                 </Styled.InputBox>
-
-                <Button primary onClick={handleOnClick}>
+                <Button variant='contained' onClick={handleOnClick}>
                     {tab === "signIn" ? "SignIn" : "SignUp"}
                 </Button>
-
-                <ChangeTabs tab={tab} setTab={setTab} setError={setError} />
+                <Button
+                    onClick={() => {
+                        setTab(tab === "signIn" ? "signUp" : "signIn");
+                        setError(null);
+                    }}>
+                    {tab === "signIn"
+                        ? "Not a user yet?"
+                        : "Already have an account?"}
+                </Button>{" "}
             </Styled.Modal>
         </Styled.PageBox>
     );

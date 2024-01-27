@@ -72,7 +72,7 @@ export const Main = () => {
 
     return (
         <BrowserRouter>
-            <div className='Main' style={{ height: "100vh" }}>
+            <Styled.Container className='Main' style={{ height: "100vh" }}>
                 <HeaderMenu
                     currentTab={currentTab}
                     setCurrentTab={setCurrentTab}
@@ -99,7 +99,7 @@ export const Main = () => {
                 </Styled.ContentContainer>
 
                 {showModal && <ModalItem />}
-            </div>
+            </Styled.Container>
         </BrowserRouter>
     );
 };

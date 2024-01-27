@@ -1,3 +1,4 @@
+import { teal } from "@mui/material/colors";
 import styled from "styled-components";
 
 export const PageBox = styled.div`
@@ -15,16 +16,15 @@ export const Modal = styled.div`
     flex-direction: column;
     justify-content: space-around;
 
-    border: 1px solid palevioletred;
+    border: 1px solid ${teal[500]};
     border-radius: 4px;
 `;
 
 export const InputBox = styled.div<{ height?: string }>`
-    height: ${({ height }) => height || "80px"};
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 15px;
 `;
 
 export const ErrorMessage = styled.div`

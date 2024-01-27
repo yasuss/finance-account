@@ -1,7 +1,8 @@
 ﻿import React from "react";
 import { useState } from "react";
 
-import Button from "shared/ui/Button";
+import { Button } from "@mui/material";
+
 import Paragraph from "shared/ui/Paragraph";
 import DatePickerComponent from "shared/ui/datepicker/DatePicker";
 
@@ -30,6 +31,7 @@ export const DateFilters = ({ startDate, endDate, handleOnSave }: any) => {
                     />
                 </div>
                 <Button
+                    variant='contained'
                     onClick={() =>
                         handleOnSave({
                             startDate: startDateLocal,

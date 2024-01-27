@@ -1,12 +1,12 @@
 ﻿import React, { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 
+import { Button } from "@mui/material";
 import { Delete } from "assets";
 
 import { addItem, deleteItem, editItem } from "shared/api";
 import { store } from "shared/redux/reducers";
 import { State } from "shared/types";
-import Button from "shared/ui/Button";
 import Heading from "shared/ui/Heading";
 import SVG from "shared/ui/Icon";
 import IconButton from "shared/ui/IconButton";
@@ -143,7 +143,9 @@ export const ModalItem = () => {
                 </Styled.DatePickerContainer>
 
                 <Styled.ButtonContainer>
-                    <Button onClick={onSave}>Save</Button>
+                    <Button variant='contained' onClick={onSave}>
+                        Save
+                    </Button>
                     {editing && (
                         <Button
                             style={{ marginLeft: "15px" }}

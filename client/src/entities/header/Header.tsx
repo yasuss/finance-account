@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Button, IconButton } from "@mui/material";
 import { Plus } from "assets";
 
 import { store } from "shared/redux/reducers";
 import SVG from "shared/ui/Icon";
-import IconButton from "shared/ui/IconButton";
 import Tab from "shared/ui/Tab";
 
 import { setShowModal } from "widgets/modal/ModalItem";
@@ -56,21 +56,15 @@ export const HeaderMenu = ({ currentTab, setCurrentTab }: any) => {
                 ))}
             </Styled.Menu>
             <div style={{ alignSelf: "center" }}>
-                <div
-                    style={{
-                        display: "inline-block",
-                        marginRight: "10px",
-                    }}>
-                    <IconButton
-                        fillColor='white'
-                        fillColorHover='palevioletred'
-                        onClick={() => setShowModal(true)}>
-                        <SVG src={Plus} />
-                    </IconButton>
-                </div>
-                <Styled.LogoutButton primary onClick={onLogout}>
+                <IconButton onClick={() => setShowModal(true)}>
+                    <SVG src={Plus} />
+                </IconButton>
+                <Button
+                    variant='contained'
+                    color='secondary'
+                    onClick={onLogout}>
                     Logout
-                </Styled.LogoutButton>
+                </Button>
             </div>
         </Styled.Container>
     );

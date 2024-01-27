@@ -1,9 +1,10 @@
+import { teal } from "@mui/material/colors";
 import styled from "styled-components";
 
-import Button from "shared/ui/Button";
+import { HEADER_SIZE } from "shared/constants/header";
 
 export const Container = styled.div`
-    height: 50px;
+    height: ${HEADER_SIZE};
 
     display: flex;
     justify-content: space-around;
@@ -11,19 +12,14 @@ export const Container = styled.div`
 
     padding: 0 20px;
 
-    background: #af5a76;
+    background: ${teal[700]};
 `;
 
 export const Menu = styled.div`
-    height: 40px;
+    height: calc(${HEADER_SIZE} - 20px);
+    display: flex;
 
     align-self: flex-end;
 
-    a + a {
-        margin-left: 4px;
-    }
-`;
-
-export const LogoutButton = styled(Button)`
-    align-self: center;
+    gap: 10px;
 `;
