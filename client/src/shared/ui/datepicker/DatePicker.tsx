@@ -2,26 +2,11 @@
 import PureDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+import { TextField } from "@mui/material";
 import ru from "date-fns/locale/ru";
-import styled from "styled-components";
 
-import Input from "../Input";
 import Day from "./Day";
-
-const DatePickerWrapper = styled.div`
-    display: inline-block;
-    .react-datepicker-wrapper {
-        width: 100%;
-    }
-    .react-datepicker__day {
-        color: palevioletred;
-    }
-    .react-datepicker__day--selected,
-    .react-datepicker__day--keyboard-selected {
-        background-color: palevioletred;
-        color: white;
-    }
-`;
+import * as Styled from "./styles";
 
 const DatePickerComponent: React.FC<any> = ({ startDate, onChange }) => {
     const handleChange = useCallback(
@@ -32,16 +17,16 @@ const DatePickerComponent: React.FC<any> = ({ startDate, onChange }) => {
     );
 
     return (
-        <DatePickerWrapper>
+        <Styled.DatePickerWrapper>
             <PureDatePicker
                 dateFormat='dd/MM/yyyy'
                 locale={ru}
                 selected={startDate}
                 onChange={handleChange}
-                customInput={<Input />}
+                customInput={<TextField size='small' variant='outlined' />}
                 renderDayContents={Day}
             />
-        </DatePickerWrapper>
+        </Styled.DatePickerWrapper>
     );
 };
 

@@ -16,20 +16,20 @@ export const DateFilters = ({ startDate, endDate, handleOnSave }: any) => {
         <Styled.Container>
             <Paragraph>Expenditure for the period</Paragraph>
             <Styled.FlexContainer>
-                <div>
+                <Styled.InputContainer>
                     <span>From:</span>
                     <DatePickerComponent
                         startDate={startDateLocal}
                         onChange={setStartDateLocal}
                     />
-                </div>
-                <div>
+                </Styled.InputContainer>
+                <Styled.InputContainer>
                     <span>To:</span>
                     <DatePickerComponent
                         startDate={endDateLocal}
                         onChange={setEndDateLocal}
                     />
-                </div>
+                </Styled.InputContainer>
                 <Button
                     variant='contained'
                     onClick={() =>

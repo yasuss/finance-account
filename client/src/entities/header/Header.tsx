@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { Button, IconButton } from "@mui/material";
+import SvgIcon from "@mui/material/SvgIcon";
 import { Plus } from "assets";
 
 import { store } from "shared/redux/reducers";
@@ -55,9 +56,14 @@ export const HeaderMenu = ({ currentTab, setCurrentTab }: any) => {
                     </Link>
                 ))}
             </Styled.Menu>
-            <div style={{ alignSelf: "center" }}>
-                <IconButton onClick={() => setShowModal(true)}>
-                    <SVG src={Plus} />
+
+            <Styled.ButtonContainer>
+                <IconButton
+                    color='secondary'
+                    onClick={() => setShowModal(true)}>
+                    <SvgIcon>
+                        <SVG src={Plus} />
+                    </SvgIcon>
                 </IconButton>
                 <Button
                     variant='contained'
@@ -65,7 +71,7 @@ export const HeaderMenu = ({ currentTab, setCurrentTab }: any) => {
                     onClick={onLogout}>
                     Logout
                 </Button>
-            </div>
+            </Styled.ButtonContainer>
         </Styled.Container>
     );
 };

@@ -5,11 +5,17 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 10px;
     width: 600px;
-    padding: 0 20px;
 `;
 
 export const FlexContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+`;
+
+export const InputContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
 `;

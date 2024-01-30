@@ -23,3 +23,10 @@ export const Menu = styled.div`
 
     gap: 10px;
 `;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+`;
